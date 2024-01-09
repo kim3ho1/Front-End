@@ -2363,14 +2363,14 @@ fieldset:disabled a.btn {
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #2e59d9;
-  border-color: #2653d4;
+  background-color: #3E382F;
+  border-color: #3E382F;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #2e59d9;
-  border-color: #2653d4;
+  background-color: #3E382F;
+  border-color: #3E382F;
   box-shadow: 0 0 0 0.2rem rgba(105, 136, 228, 0.5);
 }
 
@@ -9812,8 +9812,8 @@ a:focus {
 .container-md,
 .container-lg,
 .container-xl {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 3ㅋrem;
 }
 
 .scroll-to-top {
