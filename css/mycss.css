@@ -34,16 +34,16 @@
   width: 100%;
 }
 
-#add-title {
-  margin-top: 50px;
+.add_title_div {
+  margin-top: 60px;
   margin-bottom: 50px;
 }
 
-#add_title {
+.add_title {
   font-size: 45px; /* 글자 크기 증가 */
   font-weight: bold; /* 굵은 글씨체 */
   color: #4e73df; /* 색상 변경 */
-  margin-bottom: 30px; /* 아래 마진 추가 */
+  margin-bottom: 50px; /* 아래 마진 추가 */
   animation: fadeInUp 1s;
 }
 
@@ -104,4 +104,13 @@
   left: 0;
   color: #887964; /* 진행률 아이콘 색상 */
   clip: rect(0, auto, auto, 0); /* 클리핑 영역 설정 */
+}
+
+.food-div {
+  max-width: 500px; /* 최대 너비 설정 */
+  margin: auto; /* 상단 및 하단 마진 자동으로 설정하여 중앙 정렬 */
+}
+
+#food-form {
+  padding: 20px; /* 폼 내부에 패딩 추가 */
 }
