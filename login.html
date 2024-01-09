@@ -24,94 +24,91 @@
     />
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.css" rel="stylesheet" />
-    <link href="css/mycss.css" rel="stylesheet" />
+
+    <link href="css/login.css" rel="stylesheet" />
   </head>
 
   <body class="bg-gradient-primary">
-    <div class="container">
-      <!-- Outer Row -->
-      <div class="row justify-content-center">
-        <div class="col-xl-10 col-lg-12 col-md-9">
-          <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-              <!-- Nested Row within Card Body -->
-              <div class="row">
-                <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                <div class="col-lg-6">
-                  <div class="p-5">
-                    <div class="text-center">
-                      <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                    </div>
-                    <form class="user">
-                      <div class="form-group">
-                        <input
-                          type="email"
-                          class="form-control form-control-user"
-                          id="exampleInputEmail"
-                          aria-describedby="emailHelp"
-                          placeholder="Enter Email Address..."
-                        />
-                      </div>
-                      <div class="form-group">
-                        <input
-                          type="password"
-                          class="form-control form-control-user"
-                          id="exampleInputPassword"
-                          placeholder="Password"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <div class="custom-control custom-checkbox small">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="customCheck"
-                          />
-                          <label class="custom-control-label" for="customCheck"
-                            >Remember Me</label
-                          >
-                        </div>
-                      </div>
-                      <a
-                        href="index.html"
-                        class="btn btn-primary btn-user btn-block"
-                      >
-                        Login
-                      </a>
-                      <hr />
-                      <a
-                        href="index.html"
-                        class="btn btn-google btn-user btn-block"
-                      >
-                        <i class="fab fa-google fa-fw"></i> Login with Google
-                      </a>
-                      <a
-                        href="index.html"
-                        class="btn btn-facebook btn-user btn-block"
-                      >
-                        <i class="fab fa-facebook-f fa-fw"></i> Login with
-                        Facebook
-                      </a>
-                    </form>
-                    <hr />
-                    <div class="text-center">
-                      <a class="small" href="forgot-password.html"
-                        >Forgot Password?</a
-                      >
-                    </div>
-                    <div class="text-center">
-                      <a class="small" href="register.html"
-                        >Create an Account!</a
-                      >
-                    </div>
-                  </div>
-                </div>
+    <div id="container" class="container">
+      <!-- FORM SECTION -->
+      <div class="row">
+        <!-- SIGN UP -->
+        <div class="col align-items-center flex-col sign-up">
+          <div class="form-wrapper align-items-center">
+            <div class="form sign-up">
+              <div class="input-group">
+                <i class="bx bxs-user"></i>
+                <input type="text" placeholder="Username" />
               </div>
+              <div class="input-group">
+                <i class="bx bx-mail-send"></i>
+                <input type="email" placeholder="Email" />
+              </div>
+              <div class="input-group">
+                <i class="bx bxs-lock-alt"></i>
+                <input type="password" placeholder="Password" />
+              </div>
+              <div class="input-group">
+                <i class="bx bxs-lock-alt"></i>
+                <input type="password" placeholder="Confirm password" />
+              </div>
+              <button>Sign up</button>
+              <p>
+                <span> Already have an account? </span>
+                <b onclick="toggle()" class="pointer"> Sign in here </b>
+              </p>
             </div>
           </div>
         </div>
+        <!-- END SIGN UP -->
+        <!-- SIGN IN -->
+        <div class="col align-items-center flex-col sign-in">
+          <div class="form-wrapper align-items-center">
+            <div class="form sign-in">
+              <div class="input-group">
+                <i class="bx bxs-user"></i>
+                <input type="text" placeholder="Username" />
+              </div>
+              <div class="input-group">
+                <i class="bx bxs-lock-alt"></i>
+                <input type="password" placeholder="Password" />
+              </div>
+              <button>Sign in</button>
+              <p>
+                <b> Forgot password? </b>
+              </p>
+              <p>
+                <span> Don't have an account? </span>
+                <b onclick="toggle()" class="pointer"> Sign up here </b>
+              </p>
+            </div>
+          </div>
+          <div class="form-wrapper"></div>
+        </div>
+        <!-- END SIGN IN -->
       </div>
+      <!-- END FORM SECTION -->
+      <!-- CONTENT SECTION -->
+      <div class="row content-row">
+        <!-- SIGN IN CONTENT -->
+        <div class="col align-items-center flex-col">
+          <div id="welcome-text" class="text sign-in">
+            <h2>Welcome</h2>
+            <h2>YourProtein</h2>
+          </div>
+          <div class="img sign-in"></div>
+        </div>
+        <!-- END SIGN IN CONTENT -->
+        <!-- SIGN UP CONTENT -->
+        <div class="col align-items-center flex-col">
+          <div class="img sign-up"></div>
+          <div class="text sign-up">
+            <h2>Join with us</h2>
+          </div>
+        </div>
+        <!-- END SIGN UP CONTENT -->
+      </div>
+      <!-- END CONTENT SECTION -->
     </div>
 
     <!-- Bootstrap core JavaScript-->
@@ -123,5 +120,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
