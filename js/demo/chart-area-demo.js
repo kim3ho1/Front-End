@@ -28,6 +28,20 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec);
 }
 
+
+// 데이터 포인트
+var dataPoints = [40, 80, 95, 35, 55, 72, 48];
+
+// 색상 설정 함수
+function getColorForDataPoint(dataPoint) {
+  return dataPoint < 70 ? '#ec8282' : 'rgb(215,204,192)'; // 70 초과시 빨간색, 아니면 기본 색상
+}
+
+// 색상 배열 생성
+var backgroundColors = dataPoints.map(getColorForDataPoint);
+var borderColors = dataPoints.map(getColorForDataPoint);
+
+
 // Area Chart Example
 // 주간 단백질 섭취량 막대 그래프
 var ctx = document.getElementById("myAreaChart");
@@ -37,10 +51,10 @@ var myBarChart = new Chart(ctx, {
     labels: ["월", "화", "수", "목", "금", "토", "일"],
     datasets: [{
       label: "주간 평균 단백질 섭취량(g)",
-      backgroundColor: "rgba(78, 115, 223, 1)",
-      borderColor: "rgba(78, 115, 223, 1)",
-      data: [30, 40, 45, 35, 55, 50, 48], // 더미 데이터
-    }],
+      backgroundColor: backgroundColors,
+      borderColor: borderColors,
+      data: dataPoints
+    }]
   },
   options: {
     maintainAspectRatio: false,
@@ -53,14 +67,24 @@ var myBarChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           beginAtZero: true,
-          max: 80, // 최대값 55g
+          max: 100, // 최대값 55g
           min: 0,
-          stepSize: 10 // 5g씩 끊기
+          stepSize: 10
         }
       }]
     },
     legend: {
       display: false
+    },
+    annotation: {
+      annotations: [{
+        type: 'line',
+        mode: 'horizontal',
+        scaleID: 'y-axis-0',
+        value: 70, // 선을 그릴 y축 값
+        borderColor: '#9f9386', // 선의 색
+        borderWidth: 3 // 선의 두께
+      }]
     }
   }
 });

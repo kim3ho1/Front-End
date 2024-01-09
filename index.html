@@ -186,23 +186,6 @@
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
 
-        <!-- Sidebar Message -->
-        <div class="sidebar-card d-none d-lg-flex">
-          <img
-            class="sidebar-card-illustration mb-2"
-            src="img/undraw_rocket.svg"
-            alt="..."
-          />
-          <p class="text-center mb-2">
-            <strong>SB Admin Pro</strong> is packed with premium features,
-            components, and more!
-          </p>
-          <a
-            class="btn btn-success btn-sm"
-            href="https://startbootstrap.com/theme/sb-admin-pro"
-            >Upgrade to Pro!</a
-          >
-        </div>
       </ul>
       <!-- End of Sidebar -->
 
@@ -522,20 +505,21 @@
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                           현재 단백질 섭취량 / 목표 단백질
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        <div class="h3 mb-0 font-weight-bold text-gray-800">
                           <!-- 여기에 실제 단백질 섭취량과 목표를 표시 -->
-                          70g / 100g
+                          50g / 70g
                         </div>
                       </div>
-                      <div class="col-auto">
-                        <i class="fas fa-egg fa-2x text-gray-300"></i> <!-- 아이콘 변경 가능 -->
+                      <div class="icon-container">
+                        <i class="fas fa-egg fa-2x base-icon"></i> <!-- 항상 회색인 아이콘 -->
+                        <i id="progressIcon" class="fas fa-egg fa-2x progress-icon"></i> <!-- 진행률에 따라 색상이 변경되는 아이콘 -->
                       </div>
                     </div>
                   </div>
 
                   <div class="col text-right">
-                    <a href="#" class="btn btn-sm btn-primary shadow-sm">
-                      <i class="fas fa-download fa-sm text-white-50"></i> 음식 추가하기
+                    <a href="add.html" class="btn btn-sm btn-primary shadow-sm">
+                      <i class="fas fa-plus-circle fa-sm text-white-50"></i> 음식 추가하기
                     </a>
                   </div>
 
@@ -555,13 +539,15 @@
                   </div>
                   <!-- Card Body -->
                   <div class="card-body">
-                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                    <!-- 중앙 정렬 및 스타일링을 위한 클래스 추가 -->
+                    <div class="protein-intake-summary text-center">
                       주간 평균 단백질 섭취량 (g) : <span id="averageProteinIntake">Xg</span>
                     </div>
                     <div class="chart-area">
                       <canvas id="myAreaChart"></canvas>
                     </div>
                   </div>
+
                 </div>
               </div>
 
@@ -842,10 +828,12 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/sb-admin-2.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/chart.js/Chart.js"></script>
+    <script src="vendor/chart.js/chartjs-plugin-annotation.js"></script>
+
 
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
