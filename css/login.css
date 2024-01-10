@@ -82,7 +82,7 @@ body {
   color: var(--gray-2);
 }
 
-.input-group input {
+.input-group input, select {
   width: 100%;
   padding: 1rem 3rem;
   font-size: 1rem;
@@ -285,6 +285,12 @@ body {
   right: 50%;
 }
 
+.unit{
+  position: absolute;
+  right: 40px;
+  width: auto;
+  top: 20px;
+}
 /* RESPONSIVE */
 
 @media only screen and (max-width: 425px) {

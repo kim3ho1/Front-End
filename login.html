@@ -36,7 +36,42 @@
         <div class="col align-items-center flex-col sign-up">
           <div class="form-wrapper align-items-center">
             <div class="form sign-up">
-              <iframe src="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=3d93f617a4d6fc388877925283f37797&redirect_uri=http://localhost:8081/login.html" id="kakoLogin" width="400" height="300"></iframe>
+
+              <div class="input-group">
+                <i class="bx bxs-user"></i>
+                <input id="age" type="number" placeholder="나이"/><span class="unit">세</span>
+              </div>
+              
+              <div class="input-group">
+                <i class="bx bx-mail-send"></i>
+                <select name="gender" id="gender">
+                  <option value="MALE">남</option>
+                  <option value="FEMALE">여</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <i class="bx bxs-lock-alt"></i>
+                <input id="height" type="number" placeholder="키" /><span class="unit">cm</span>
+              </div>
+
+              <div class="input-group">
+                <i class="bx bxs-lock-alt"></i>
+                <input id="weight" type="number" placeholder="몸무게" /><span class="unit">kg</span>
+              </div>
+
+              <span>목적</span>
+              <div class="input-group">
+                <i class="bx bx-mail-send"></i>
+                <select name="purpose" id="purpose">
+                  <option value="1">일반 (운동을 하지 않거나 신장질환 보유)</option>
+                  <option value="2">운동</option>
+                  <option value="3">벌크업</option>
+                </select>
+              </div>
+
+              <button onclick="signup()">Sign up</button>
+
             </div>
           </div>
         </div>
@@ -89,5 +124,6 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.js"></script>
     <script src="js/login.js"></script>
+    <!-- <script> toggle();</script> -->
   </body>
 </html>

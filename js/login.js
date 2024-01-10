@@ -1,4 +1,5 @@
 var SERVER_DOMAIN = "http://localhost:8081"
+var API_SERVER_DOMAIN = "http://localhost:8000"
 
 
 let container = document.getElementById("container");
@@ -35,7 +36,7 @@ if (queryString) {
   }
 
 function login(code){
-  fetch('https://api.yourprotein.shop/login/kakao?code='+code)
+  fetch(API_SERVER_DOMAIN+"/login/kakao?code="+code)
             .then(response => {
                 // 응답이 성공적으로 받아지면 JSON 형식으로 파싱합니다.
                 if (!response.ok) {
@@ -48,7 +49,13 @@ function login(code){
                 setCookie("accessToken", accessToken, 1);
                 var refreshToken = data.refreshToken;
                 setCookie("refreshToken", refreshToken, 1);
-                window.location.replace(SERVER_DOMAIN)
+                console.log("new user? " + data.isNewUser)
+                if(data.isNewUser){
+                  toggle();
+                }else{
+                  window.location.replace(SERVER_DOMAIN)
+                }
+                
             })
             .catch(error => {
                 // 오류가 발생하면 콘솔에 출력합니다.
@@ -81,3 +88,75 @@ function getCookie(name) {
   }
   return null;
 }
+
+function signup(){
+  var age = document.getElementById("age").value
+  var gender = document.getElementById("gender").value
+  var height = document.getElementById("height").value
+  var weight = document.getElementById("weight").value
+  var purpose = document.getElementById("purpose").value
+  console.log(age)
+  console.log(gender)
+  console.log(height)
+  console.log(weight)
+  console.log(purpose)
+
+  if(age == null || gender ==null || height==null || weight == null || purpose == null){
+    alert("빈칸을 모두 채워주세요.")
+    return
+  }
+
+  // 서버 엔드포인트 URL
+  var url = API_SERVER_DOMAIN+"/user/details";
+
+  var jsonData = {
+    "age": age,
+    "gender" : gender,
+    "height" : height,
+    "weight" : weight,
+    "purpose" : purpose
+  };
+  
+  // fetch 함수를 사용하여 POST 요청 보냄
+  fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization" : "Bearer " + getCookie("accessToken")
+      },
+      body: JSON.stringify(jsonData) // JSON 데이터를 문자열로 변환하여 body에 포함
+  })
+  // .then(response => response.json()) // 응답을 JSON 형식으로 파싱
+  .then(data => {
+      console.log("서버 응답:", data);
+      // 여기에서 서버 응답을 처리할 수 있습니다.
+      window.location.replace(SERVER_DOMAIN)
+  })
+  .catch(error => {
+      console.error("에러 발생:", error);
+  });
+
+}
+
+
+function logout(){
+  var url = API_SERVER_DOMAIN+"/logout";
+  fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    }
+    })
+    // .then(response => response.json()) // 응답을 JSON 형식으로 파싱
+    .then(data => {
+        console.log("서버 응답:", data);
+        // 여기에서 서버 응답을 처리할 수 있습니다.
+        window.location.replace(SERVER_DOMAIN)
+    })
+    .catch(error => {
+        console.error("에러 발생:", error);
+    });
+}
+
+
+
