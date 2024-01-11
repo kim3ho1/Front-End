@@ -30,6 +30,7 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet" />
     <link href="css/mycss.css" rel="stylesheet" />
+
   </head>
 
   <body id="page-top">
@@ -61,7 +62,7 @@
           <!-- 단백질 정보 -->
           <a class="nav-link" href="index.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span id="username2"> </span>
+            <span id="username2">회원 님</span>
             <span>의 단백질 정보</span>
           </a>
           <!-- 레포트 -->
@@ -86,7 +87,7 @@
         <li class="nav-item">
           <a class="nav-link" href="mypage.html">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>마이페이지</span></a
+            <span>마이 페이지</span></a
           >
         </li>
 
@@ -118,12 +119,12 @@
 
             <!-- Topbar Greeting -->
             <form
-              class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+              class="d-none d-sm-inline-block form-inline mr -auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
             >
               <div class="input-group">
                 <div class="input-group-append" style="font-family: 'Do Hyeon', sans-serif">
                   <span>안녕하세요,! &nbsp;</span>
-                  <span id="username4"></span>
+                  <span id="username3">회원 님</span>
                   <span> !</span>
                 </div>
               </div>
@@ -158,8 +159,9 @@
                   aria-expanded="false"
                 >
                   <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="username">
+                    회원 님
                   </span>
-                  <img
+                  <img id="profileImage"
                     class="img-profile rounded-circle"
                     src="img/undraw_profile.svg"
                   />
@@ -171,7 +173,7 @@
                 >
                   <a class="dropdown-item" href="mypage.html">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                    My page
+                    마이 페이지
                   </a>
 
                   <div class="dropdown-divider"></div>
@@ -184,7 +186,7 @@
                     <i
                       class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
                     ></i>
-                    Logout
+                    로그아웃
                   </a>
                 </div>
               </li>
@@ -197,8 +199,7 @@
             <!-- Page Heading -->
             <div
               class="d-sm-flex align-items-center justify-content-center mb-4">
-              <h1 class="h3 mb-0 text-gray-800" style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold;"id="username3"> </h1>
-              <h1 class="h3 mb-0 text-gray-800" style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold;">의 단백질 정보</h1>
+              <h1 class="h3 mb-0 text-gray-800" style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold;">단백질 정보 DashBoard</h1>
             </div>
 
             <!-- Content Row -->
@@ -210,15 +211,17 @@
                     <div class="row no-gutters align-items-center">
                       <div class="col mr-2">
                         <div
-                          class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                          class="text-xs font-weight-bold text-primary mb-1"
                         >
                           현재 단백질 섭취량 / 목표 단백질
                         </div>
                         <div class="h3 mb-0 font-weight-bold text-gray-800">
                           <!-- 여기에 실제 단백질 섭취량과 목표를 표시 -->
-                          <span id="currentProtein">50 g</span>
+                          <span id="currentProtein">0</span>
+                          <span> g</span>
                           <span id="">/</span>
-                          <span id="goalProtein">0 g</span>
+                          <span id="goalProtein">0</span>
+                          <span> g</span>
                         </div>
                       </div>
                       <div class="icon-container">
@@ -258,13 +261,17 @@
                   <!-- Card Body -->
                   <div class="card-body">
                     <!-- 중앙 정렬 및 스타일링을 위한 클래스 추가 -->
-                    <div class="protein-intake-summary text-center">
+                    <div class="text-xs font-weight-bold text-primary mb-1 text-center">
                       주간 평균 단백질 섭취량 (g) :
                       <span id="averageProteinIntake">Xg</span>
                     </div>
                     <div class="chart-area">
                       <canvas id="myAreaChart"></canvas>
                     </div>
+                  </div>
+
+                  <div class="text-xs text-primary mb-1 text-right">
+                    * 목표 단백질보다 섭취량이 20g 많거나 적을 경우 빨간색으로 표시됩니다.  &nbsp;
                   </div>
                 </div>
               </div>
@@ -275,7 +282,7 @@
               <div class="col-lg-3 mb-4">
                 <a href="report.html" id="diagnoseButton" class="btn card bg-warning text-white shadow">
                   <div class="card-body">
-                    <div class="text-xs font-weight-bold text-uppercase">
+                    <div class="text-xs font-weight-bold" style="font-size: medium">
                       진단하기
                   </div>
                   </div>
@@ -292,52 +299,8 @@
                   <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">레시피</h6>
                   </div>
-                  <div class="card-body">
-                    <!-- 첫 번째 레시피 -->
-                    <div class="recipe-item">
-                      <div class="recipe-content">
-                        <img src="recipe1.jpg" alt="Recipe 1">
-                        <h4 class="recipe-name">레시피 1</h4>
-                      </div>
-                      <a href="cook_recipe_1.html" class="btn btn-primary">요리하기</a>
-                    </div>
 
-                    <!-- Divider -->
-                    <hr class="sidebar-divider" />
-
-                    <!-- 두 번째 레시피 -->
-                    <div class="recipe-item">
-                      <div class="recipe-content">
-                        <img src="recipe2.jpg" alt="Recipe 2">
-                        <h4 class="recipe-name">레시피 2</h4>
-                      </div>
-                      <a href="cook_recipe_2.html" class="btn btn-primary">요리하기</a>
-                    </div>
-
-                    <!-- Divider -->
-                    <hr class="sidebar-divider" />
-
-                    <!-- 세 번째 레시피 -->
-                    <div class="recipe-item">
-                      <div class="recipe-content">
-                        <img src="recipe3.jpg" alt="Recipe 3">
-                        <h4 class="recipe-name">레시피 3</h4>
-                      </div>
-                      <a href="cook_recipe_3.html" class="btn btn-primary">요리하기</a>
-                    </div>
-
-                    <!-- Divider -->
-                    <hr class="sidebar-divider" />
-
-                    <!-- 네 번째 레시피 -->
-                    <div class="recipe-item">
-                      <div class="recipe-content">
-                        <img src="recipe4.jpg" alt="Recipe 4">
-                        <h4 class="recipe-name">레시피 4</h4>
-                      </div>
-                      <a href="cook_recipe_4.html" class="btn btn-primary">요리하기</a>
-                    </div>
-                    <!-- 필요한 만큼 레시피 아이템을 추가할 수 있습니다. -->
+                  <div class="card-body" id="recipe-container">
                   </div>
                 </div>
               </div>
@@ -405,46 +368,29 @@
       </div>
     </div>
 
-<!--      <div id="loadingScreen" style="display: none;">-->
-<!--        <img src="img/intelligence_brain_loading.gif" alt="loading">-->
-<!--      </div>-->
 
-<!--      <script>-->
-<!--        const diagnoseButton = document.getElementById("diagnoseButton");-->
-<!--        const loadingScreen = document.getElementById("loadingScreen");-->
+      <!-- Bootstrap core JavaScript-->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!--        // 진단 버튼 클릭 이벤트 리스너-->
-<!--        diagnoseButton.addEventListener("click", () => {-->
-<!--          // 버튼 클릭 시 로딩 화면을 표시-->
-<!--          loadingScreen.style.display = "block";-->
+      <!-- Core plugin JavaScript-->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!--          // 2초 후에 report.html로 이동-->
-<!--          setTimeout(() => {-->
-<!--            window.location.href = "report.html";-->
-<!--          }, 2000); // 2초 (2000 밀리초)-->
-<!--        });-->
-<!--      </script>-->
+      <!-- Custom scripts for all pages-->
+      <script src="js/sb-admin-2.js"></script>
+      <script src="js/profile.js"></script>
+
+      <!-- Page level custom scripts -->
+      <script src="js/login.js"></script>
+      <script src="js/userbar.js"></script>
+      <script src="js/index.js"></script>
+
+      <!-- Page level plugins -->
+      <script src="vendor/chart.js/Chart.js"></script>
+      <script src="vendor/chart.js/chartjs-plugin-annotation.js"></script>
+      <script src="js/demo/chart-area-demo.js"></script>
 
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.js"></script>
-    <script src="js/profile.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.js"></script>
-    <script src="vendor/chart.js/chartjs-plugin-annotation.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/login.js"></script>
-    <script src="js/index.js"></script>
   </body>
 
 

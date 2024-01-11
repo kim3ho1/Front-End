@@ -30,8 +30,6 @@ if (queryString) {
     // code 파라미터를 가져옵니다.
     var codeParam = params['code'];
 
-    // 가져온 파라미터를 사용하거나 로깅합니다.
-    console.log('code 파라미터 값:', codeParam);
     login(codeParam);
   }
 
@@ -55,7 +53,7 @@ function login(code){
                 }else{
                   window.location.replace(SERVER_DOMAIN)
                 }
-                
+
             })
             .catch(error => {
                 // 오류가 발생하면 콘솔에 출력합니다.

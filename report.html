@@ -23,12 +23,23 @@
       rel="stylesheet"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet" />
     <link href="css/mycss.css" rel="stylesheet" />
     <link href="css/report.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
-    <script src="https://code.jquery.com/jquery-1.8.3.min.js" integrity="sha256-YcbK69I5IXQftf/mYD8WY0/KmEDCv1asggHpJk1trM8=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-1.8.3.min.js"
+      integrity="sha256-YcbK69I5IXQftf/mYD8WY0/KmEDCv1asggHpJk1trM8="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body id="page-top">
@@ -42,24 +53,25 @@
         <!-- Sidebar - Brand -->
         <a
           class="sidebar-brand d-flex align-items-center justify-content-center"
-          style="flex-direction: column;"
+          style="flex-direction: column"
           href="index.html"
         >
           <div class="sidebar-brand-icon">
-            <img src="img/logo.png" alt="Your Logo">
+            <img src="img/logo.png" alt="Your Logo" />
           </div>
-          <div class="sidebar-brand-text mx-2" style="margin-top: 0.4rem;">Your Protein</div>
+          <div class="sidebar-brand-text mx-2" style="margin-top: 0.4rem">
+            Your Protein
+          </div>
         </a>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0" />
 
-
         <li class="nav-item">
           <!-- 단백질 정보 -->
           <a class="nav-link" href="index.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span id="username2"> </span>
+            <span id="username2">회원 님</span>
             <span>의 단백질 정보</span>
           </a>
           <!-- 레포트 -->
@@ -84,7 +96,7 @@
         <li class="nav-item">
           <a class="nav-link" href="mypage.html">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>마이페이지</span></a
+            <span>마이 페이지</span></a
           >
         </li>
 
@@ -98,7 +110,7 @@
       </ul>
       <!-- End of Sidebar -->
 
-      <!-- Content Wrapper -->
+      <!-- Main -->
       <div id="content-wrapper" class="d-flex flex-column">
         <!-- Main Content -->
         <div id="content">
@@ -116,32 +128,22 @@
 
             <!-- Topbar Greeting -->
             <form
-              class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+              class="d-none d-sm-inline-block form-inline mr -auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
             >
               <div class="input-group">
-                <div class="input-group-append">
-                  <span>안녕하세요, 김프로틴 님 !</span>
+                <div
+                  class="input-group-append"
+                  style="font-family: 'Do Hyeon', sans-serif"
+                >
+                  <span>안녕하세요,! &nbsp;</span>
+                  <span id="username3">회원 님</span>
+                  <span> !</span>
                 </div>
               </div>
             </form>
 
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
-              <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-              <li class="nav-item dropdown no-arrow d-sm-none">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="searchDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <span>안녕하세요, 김프로틴 님 !</span>
-                </a>
-              </li>
-
               <!-- Nav Item - 로그인/회원가입 -->
               <li class="nav-item mx-1" id="login-link" style="display: none">
                 <a class="nav-link" href="#">로그인</a>
@@ -153,11 +155,6 @@
                 style="display: none"
               >
                 <a class="nav-link" href="#">회원가입</a>
-              </li>
-
-              <!-- Nav Item - 로그아웃 -->
-              <li class="nav-item mx-1" id="logout-link" style="display: none">
-                <a class="nav-link" href="#">로그아웃</a>
               </li>
 
               <div class="topbar-divider d-none d-sm-block"></div>
@@ -173,10 +170,14 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                    >Douglas McGee</span
+                  <span
+                    class="mr-2 d-none d-lg-inline text-gray-600 small"
+                    id="username"
                   >
+                    회원 님
+                  </span>
                   <img
+                    id="profileImage"
                     class="img-profile rounded-circle"
                     src="img/undraw_profile.svg"
                   />
@@ -186,45 +187,30 @@
                   class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                   aria-labelledby="userDropdown"
                 >
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="mypage.html">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Profile
+                    마이 페이지
                   </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Settings
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Activity Log
-                  </a>
+
                   <div class="dropdown-divider"></div>
                   <a
                     class="dropdown-item"
-                    href="#"
+                    href="https://api.yourprotein.shop/logout"
                     data-toggle="modal"
                     data-target="#logoutModal"
                   >
                     <i
                       class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
                     ></i>
-                    Logout
+                    로그아웃
                   </a>
                 </div>
               </li>
             </ul>
           </nav>
           <!-- End of Topbar -->
-
-
-
-
-
-
           <!-- Content Row -->
           <div class="row justify-content-center">
-
-
             <!-- Protein Intake Card -->
             <div class="col-xl-8 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
@@ -236,16 +222,18 @@
                       >
                         당신의 프로틴 섭취
                       </div>
-                      <div class=" mb-0 font-weight-light text-gray-800">
+                      <div class="mb-0 font-weight-light text-gray-800">
                         <!-- 여기에 실제 단백질 섭취량과 목표를 표시 -->
-                        <span id="advice_1">여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.  </span>
+                        <span id="advice_1"
+                          >
+                          <img id="loading" src="/img/loading.gif" alt="" style="height: 20px;">
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
 
             <!-- Protein Intake Card -->
             <div class="col-xl-8 col-md-6 mb-4">
@@ -258,9 +246,11 @@
                       >
                         당신의 영양소 균형
                       </div>
-                      <div class=" mb-0 font-weight-light text-gray-800">
+                      <div class="mb-0 font-weight-light text-gray-800">
                         <!-- 여기에 실제 단백질 섭취량과 목표를 표시 -->
-                        <span id="advice_1">여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.  </span>
+                        <span id="advice_1"
+                          ><img id="loading" src="/img/loading.gif" alt="" style="height: 20px;">
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -268,11 +258,12 @@
               </div>
             </div>
 
-
-
             <!-- Protein Intake Card -->
             <div class="col-xl-8 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2" style="border-left: 0.5rem solid #6285d4 !important;">
+              <div
+                class="card border-left-primary shadow h-100 py-2"
+                style="border-left: 0.5rem solid #6285d4 !important"
+              >
                 <div class="card-body" style="margin-bottom: -1rem">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
@@ -281,56 +272,53 @@
                       >
                         통합 조언
                       </div>
-                      <div class=" mb-0 font-weight-light text-gray-800">
+                      <div class="mb-0 font-weight-light text-gray-800">
                         <!-- 여기에 실제 단백질 섭취량과 목표를 표시 -->
-                        <span id="advice_1">여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.  </span>
+                        <span id="advice_1"
+                          ><img id="loading" src="/img/loading.gif" alt="" style="height: 20px;">
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-
 
             <!-- Protein Intake Card -->
             <div class="col-xl-8 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-70 py-2" style="border-left: 0.5rem solid rgb(91, 192, 131) !important;">
+              <div
+                class="card border-left-primary shadow h-70 py-2"
+                style="border-left: 0.5rem solid rgb(91, 192, 131) !important"
+              >
                 <div class="card-body" style="margin-bottom: -1rem">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="h3 text-s font-weight-bold text-primary text-uppercase mb-3" onclick="talk_ai_open()" style="cursor: pointer;">
-                        AI에게 조언하기 <i id="talk_ai_i" class="fas fa-angle-right"></i>
+                      <div
+                        class="h3 text-s font-weight-bold text-primary text-uppercase mb-3"
+                        onclick="talk_ai_open()"
+                        style="cursor: pointer"
+                      >
+                        AI에게 조언하기
+                        <i id="talk_ai_i" class="fas fa-angle-right"></i>
                       </div>
 
-
-                        <!-- chat start -->
-                        <div class="chat_wrap">
-                          <div class="inner">
-                             
-                          </div>
-                          <input id="mymsg" type="text" class="mymsg" placeholder="내용 입력">
+                      <!-- chat start -->
+                      <div class="chat_wrap">
+                        <div class="inner"></div>
+                        <input
+                          id="mymsg"
+                          type="text"
+                          class="mymsg"
+                          placeholder="내용 입력"
+                        />
                       </div>
                       <!-- chat end -->
-
-
-
-                      
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-
-
-
-
           </div>
-
-
-
-
         </div>
         <!-- End of Main Content -->
 
@@ -402,6 +390,9 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script src="js/profile.js"></script>
+    <script src="js/login.js"></script>
     <script src="js/report.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/userbar.js"></script>
   </body>
 </html>
