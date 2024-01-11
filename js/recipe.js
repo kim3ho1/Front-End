@@ -14,7 +14,7 @@ document.querySelectorAll('.recipe-item .btn').forEach(function(btn) {
 // 팝업 창 띄우는 함수
 function openRecipeModal(recipeId) {
 
-    const popupUrl = `recipepopup.html?id=${recipeId}`;
+    const popupUrl = `recipepopup?id=${recipeId}`;
 
     // 모달 요소를 생성하고 스타일을 지정합니다.
     const modalContainer = document.createElement('div');
