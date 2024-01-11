@@ -58,7 +58,8 @@ function calculateProtein() {
 
   putUserProtein(foodId, proteinIntake)
     .then(() => {
-      console.log("사용자의 단백질 섭취량이 서버에 전송되었습니다.");
+      alert("사용자의 단백질 섭취량이 서버에 전송되었습니다.");
+      
     })
     .catch((error) => {
       console.error("단백질 섭취량 전송 오류:", error);
@@ -148,9 +149,9 @@ function calculateProtein() {
   const proteinPer100g = selectedOption.value;
   const foodId = selectedOption.dataset.foodId; // 선택된 음식의 ID
   const weight = document.getElementById("food-weight").value;
-  const proteinIntake = (proteinPer100g * weight) / 100;
-  document.getElementById("protein-intake").textContent =
-    proteinIntake.toFixed(2);
+  const proteinIntake = ((proteinPer100g * weight) / 100).toFixed(1);
+  console.log("protein : " + proteinIntake)
+  // document.getElementById("protein-intake").textContent = proteinIntake.toFixed(2);
 
   // 서버에 사용자의 프로틴 섭취량 전송
   putUserProtein(foodId, proteinIntake)
@@ -172,12 +173,17 @@ function putUserProtein(foodId, proteinIntake) {
     },
     body: JSON.stringify({
       foodId: foodId,
-      proteinIntake: proteinIntake,
+      protein: proteinIntake,
     }),
   }).then((response) => {
     if (!response.ok) {
       throw new Error("API 호출 실패");
     }
+    alert("음식이 추가 되었습니다.")
+    document.getElementById("food-select").innerHTML = ""
+    document.getElementById("food-search").value = ""
     return response.json();
   });
 }
+
+
