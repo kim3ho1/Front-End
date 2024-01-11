@@ -1,5 +1,5 @@
-var SERVER_DOMAIN = "http://localhost:8081"
-var API_SERVER_DOMAIN = "http://localhost:8000"
+var SERVER_DOMAIN = "https://yourprotein.shop"
+var API_SERVER_DOMAIN = "https://api.yourprotein.shop"
 
 
 let container = document.getElementById("container");
