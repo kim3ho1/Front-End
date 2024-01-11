@@ -1,4 +1,4 @@
-.chat_wrap { border:1px solid #999; width:300px; padding:5px; font-size:13px; color:#333; display: none; transition: 0.5s;}
+.chat_wrap { #999; width:300px; padding:5px; font-size:13px; color:#333; display: none; transition: 0.5s;}
 .chat_wrap .inner{background-color:#acc2d2; border-radius:5px; padding:10px; overflow-y:scroll;height: 400px;}
 .chat_wrap .item{margin-top:15px}
 .chat_wrap .item:first-child{margin-top:0px}

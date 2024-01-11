@@ -41,12 +41,46 @@ $(function(){
             document.getElementsByClassName("inner")[0].appendChild(newElement)
 
             //fetch
+            var jsonData = {
+                "prompt": _val
+              };
+
+            fetch("https://api.yourprotein.shop/api/chatgpt/rest/completion/chat", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "Authorization" : "Bearer " + getCookie("accessToken")
+                },
+                body: JSON.stringify(jsonData) // JSON 데이터를 문자열로 변환하여 body에 포함
+            })
+            .then(response => {
+                // 응답이 성공적으로 받아지면 JSON 형식으로 파싱합니다.
+                if (!response.ok) {
+                    // window.location.replace(SERVER_DOMAIN+ "/login.html")
+                }
+                return response.json();
+            })
+            // .then(response => response.json()) // 응답을 JSON 형식으로 파싱
+            .then(data => {
+                console.log("서버 응답:", data);
+                // 여기에서 서버 응답을 처리할 수 있습니다.
+                ai_chat(data.messages[0].message)
+                document.getElementById("loading").remove();
+                document.getElementById("mymsg").disabled = false;
+                document.getElementById("mymsg").focus();
+            })
+            .catch(error => {
+                console.error("에러 발생:", error);
+            });
+
+
+
+
+
+
             //fetch 해야함
 
-            ai_chat("답변입니다.")
-            document.getElementById("loading").remove();
-            document.getElementById("mymsg").disabled = false;
-            document.getElementById("mymsg").focus();
+            
         }
     });
 
