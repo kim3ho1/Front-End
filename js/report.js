@@ -72,15 +72,6 @@ $(function(){
             .catch(error => {
                 console.error("에러 발생:", error);
             });
-
-
-
-
-
-
-            //fetch 해야함
-
-            
         }
     });
 
@@ -111,3 +102,58 @@ function ai_chat(msg){
     $(".chat_wrap .inner").stop().animate({scrollTop:position},500);
 }
 
+function getPlanAdvice(){
+    fetch("https://api.yourprotein.shop/gpt/total", {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                  "Authorization" : "Bearer " + getCookie("accessToken")
+                }
+            })
+            .then(response => {
+                // 응답이 성공적으로 받아지면 JSON 형식으로 파싱합니다.
+                if (!response.ok) {
+                    // window.location.replace(SERVER_DOMAIN+ "/login.html")
+                }
+                return response.json();
+            })
+            // .then(response => response.json()) // 응답을 JSON 형식으로 파싱
+            .then(data => {
+                console.log("서버 응답:", data);
+                // 여기에서 서버 응답을 처리할 수 있습니다.
+                document.getElementById("1_loading").remove();
+                document.getElementById("advice_1").innerText = data.messages[0].message
+            })
+            .catch(error => {
+                console.error("에러 발생:", error);
+            });
+}
+
+function getTotalAdvice(){
+    fetch("https://api.yourprotein.shop/gpt/plan", {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                  "Authorization" : "Bearer " + getCookie("accessToken")
+                }
+            })
+            .then(response => {
+                // 응답이 성공적으로 받아지면 JSON 형식으로 파싱합니다.
+                if (!response.ok) {
+                    // window.location.replace(SERVER_DOMAIN+ "/login.html")
+                }
+                return response.json();
+            })
+            // .then(response => response.json()) // 응답을 JSON 형식으로 파싱
+            .then(data => {
+                console.log("서버 응답:", data);
+                // 여기에서 서버 응답을 처리할 수 있습니다.
+                document.getElementById("2_loading").remove();
+                document.getElementById("advice_2").innerText = data.messages[0].message
+            })
+            .catch(error => {
+                console.error("에러 발생:", error);
+            });
+}
+getTotalAdvice();
+getPlanAdvice();
