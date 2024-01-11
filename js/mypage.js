@@ -1,27 +1,34 @@
-var SERVER_DOMAIN = "http://localhost:8081";
-var API_SERVER_DOMAIN = "http://localhost:8000";
-
-let container = document.getElementById("container");
-
-async function fetchProfile() {
-  try {
-    const response = await fetch(`${API_SERVER_DOMAIN}/user/details`, {
-      headers: {
-        Authorization: `Bearer ${getCookie("accessToken")}`,
-      },
+function getuser() {
+  fetch("https://api.yourprotein.shop/user", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + getCookie("accessToken"),
+    },
+    // body: JSON.stringify(jsonData)
+  })
+    .then((response) => {
+      // 응답이 성공적으로 받아지면 JSON 형식으로 파싱합니다.
+      if (!response.ok) {
+        // window.location.replace(SERVER_DOMAIN+ "/login.html")
+      }
+      return response.json();
+    })
+    .then((data) => {
+      var height = data.height;
+      var weight = data.weight;
+      var goalProtein = data.goalProtein;
+      var purpose = data.purpose;
+      document.getElementById("height").innerText = height;
+      document.getElementById("weight").value = weight;
+      document.getElementById("goalProtein").value = goalProtein;
+      document.getElementById("weight").value = weight;
+    })
+    .catch((error) => {
+      // 오류가 발생하면 콘솔에 출력합니다.
+      console.error("오류:", error);
+      // window.location.replace(SERVER_DOMAIN+ "/login.html")
     });
-    if (!response.ok) {
-      // 에러 처리
-      return;
-    }
-    const data = await response.json();
-    document.getElementById("height").value = data.height;
-    document.getElementById("weight").value = data.weight;
-    document.getElementById("goal").value = data.goal;
-    document.getElementById("purpose").value = data.purpose;
-  } catch (error) {
-    console.error("Error fetching profile:", error);
-  }
 }
 
 function enableEdit() {
@@ -33,7 +40,7 @@ function enableEdit() {
   document.getElementById("saveButton").style.display = "block";
 }
 
-async function saveData() {
+function saveData() {
   const height = parseFloat(document.getElementById("height").value);
   const weight = parseFloat(document.getElementById("weight").value);
   const goal = parseFloat(document.getElementById("goal").value);
@@ -46,25 +53,6 @@ async function saveData() {
     purpose: purpose,
   };
 
-  try {
-    const response = await fetch(`${API_SERVER_DOMAIN}/user/details`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${getCookie("accessToken")}`,
-      },
-      body: JSON.stringify(jsonData),
-    });
-
-    if (response.ok) {
-      alert("Profile updated successfully.");
-    } else {
-      alert("Error updating profile.");
-    }
-  } catch (error) {
-    console.error("Error updating profile:", error);
-  }
-
   // 수정 상태를 되돌림
   document.getElementById("height").disabled = true;
   document.getElementById("weight").disabled = true;
@@ -75,4 +63,4 @@ async function saveData() {
 }
 
 // 페이지 로드 시 프로필 정보 가져오기
-window.addEventListener("load", fetchProfile);
+getuser();
