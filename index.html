@@ -23,6 +23,10 @@
       rel="stylesheet"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet" />
     <link href="css/mycss.css" rel="stylesheet" />
@@ -39,64 +43,47 @@
         <!-- Sidebar - Brand -->
         <a
           class="sidebar-brand d-flex align-items-center justify-content-center"
+          style="flex-direction: column;"
           href="index.html"
         >
-          <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+          <div class="sidebar-brand-icon">
+            <img src="img/logo.png" alt="Your Logo">
           </div>
-          <div class="sidebar-brand-text mx-3">Your Protein</div>
+          <div class="sidebar-brand-text mx-2">Your Protein</div>
         </a>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0" />
 
-        <!-- Nav Item - Dashboard -->
+
         <li class="nav-item">
+          <!-- 단백질 정보 -->
           <a class="nav-link" href="index.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a
+            <span>나의 단백질 정보</span></a
+          >
+          <!-- 레포트 -->
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-file-alt"></i>
+            <span>레포트</span></a
+          >
+          <!-- 레시피 -->
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-utensils"></i>
+            <span>레시피</span></a
           >
         </li>
+
+
+
+
+
 
         <!-- Divider -->
         <hr class="sidebar-divider" />
 
         <!-- Heading -->
-        <div class="sidebar-heading">Addons</div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item active">
-          <a
-            class="nav-link"
-            href="#"
-            data-toggle="collapse"
-            data-target="#collapsePages"
-            aria-expanded="true"
-            aria-controls="collapsePages"
-          >
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-          </a>
-          <div
-            id="collapsePages"
-            class="collapse show"
-            aria-labelledby="headingPages"
-            data-parent="#accordionSidebar"
-          >
-            <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Login Screens:</h6>
-              <a class="collapse-item" href="login.html">Login</a>
-              <a class="collapse-item" href="register.html">Register</a>
-              <a class="collapse-item" href="forgot-password.html"
-                >Forgot Password</a
-              >
-              <div class="collapse-divider"></div>
-              <h6 class="collapse-header">Other Pages:</h6>
-              <a class="collapse-item" href="404.html">404 Page</a>
-              <a class="collapse-item active" href="report.html">Blank Page</a>
-            </div>
-          </div>
-        </li>
+        <div class="sidebar-heading">회원정보</div>
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
@@ -137,7 +124,7 @@
               class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
             >
               <div class="input-group">
-                <div class="input-group-append">
+                <div class="input-group-append" style="font-family: 'Do Hyeon', sans-serif">
                   <span>안녕하세요, 김프로틴 님 !</span>
                 </div>
               </div>
@@ -145,21 +132,6 @@
 
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
-              <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-              <li class="nav-item dropdown no-arrow d-sm-none">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="searchDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <span>안녕하세요, 김프로틴 님 !</span>
-                </a>
-              </li>
-
               <!-- Nav Item - 로그인/회원가입 -->
               <li class="nav-item mx-1" id="login-link" style="display: none">
                 <a class="nav-link" href="#">로그인</a>
@@ -240,7 +212,7 @@
             <div
               class="d-sm-flex align-items-center justify-content-center mb-4"
             >
-              <h1 class="h3 mb-0 text-gray-800">나의 단백질 정보</h1>
+              <h1 class="h3 mb-0 text-gray-800" style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold;">나의 단백질 정보</h1>
             </div>
 
             <!-- Content Row -->
@@ -313,7 +285,7 @@
             <!-- Report -->
             <div class="row justify-content-center">
               <div class="col-lg-3 mb-4">
-                <a href="report.html" class="btn card bg-warning text-white shadow">
+                <a href="report.html" id="diagnoseButton" class="btn card bg-warning text-white shadow">
                   <div class="card-body">
                     <div class="text-xs font-weight-bold text-uppercase">
                       진단하기
@@ -342,6 +314,9 @@
                       <a href="cook_recipe_1.html" class="btn btn-primary">요리하기</a>
                     </div>
 
+                    <!-- Divider -->
+                    <hr class="sidebar-divider" />
+
                     <!-- 두 번째 레시피 -->
                     <div class="recipe-item">
                       <div class="recipe-content">
@@ -351,6 +326,9 @@
                       <a href="cook_recipe_2.html" class="btn btn-primary">요리하기</a>
                     </div>
 
+                    <!-- Divider -->
+                    <hr class="sidebar-divider" />
+
                     <!-- 세 번째 레시피 -->
                     <div class="recipe-item">
                       <div class="recipe-content">
@@ -359,6 +337,9 @@
                       </div>
                       <a href="cook_recipe_3.html" class="btn btn-primary">요리하기</a>
                     </div>
+
+                    <!-- Divider -->
+                    <hr class="sidebar-divider" />
 
                     <!-- 네 번째 레시피 -->
                     <div class="recipe-item">
@@ -436,6 +417,27 @@
       </div>
     </div>
 
+<!--      <div id="loadingScreen" style="display: none;">-->
+<!--        <img src="img/intelligence_brain_loading.gif" alt="loading">-->
+<!--      </div>-->
+
+<!--      <script>-->
+<!--        const diagnoseButton = document.getElementById("diagnoseButton");-->
+<!--        const loadingScreen = document.getElementById("loadingScreen");-->
+
+<!--        // 진단 버튼 클릭 이벤트 리스너-->
+<!--        diagnoseButton.addEventListener("click", () => {-->
+<!--          // 버튼 클릭 시 로딩 화면을 표시-->
+<!--          loadingScreen.style.display = "block";-->
+
+<!--          // 2초 후에 report.html로 이동-->
+<!--          setTimeout(() => {-->
+<!--            window.location.href = "report.html";-->
+<!--          }, 2000); // 2초 (2000 밀리초)-->
+<!--        });-->
+<!--      </script>-->
+
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -455,4 +457,7 @@
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/login.js"></script>
   </body>
+
+
+
 </html>
