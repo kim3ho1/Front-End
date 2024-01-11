@@ -35,6 +35,7 @@
   <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
+
       <!-- Sidebar -->
       <ul
         class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
@@ -60,8 +61,9 @@
           <!-- 단백질 정보 -->
           <a class="nav-link" href="index.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>나의 단백질 정보</span></a
-          >
+            <span id="username2"> </span>
+            <span>의 단백질 정보</span>
+          </a>
           <!-- 레포트 -->
           <a class="nav-link" href="report.html">
             <i class="fas fa-fw fa-file-alt"></i>
@@ -82,7 +84,7 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="mypage.html">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>마이페이지</span></a
           >
@@ -98,7 +100,7 @@
       </ul>
       <!-- End of Sidebar -->
 
-      <!-- Content Wrapper -->
+      <!-- Main -->
       <div id="content-wrapper" class="d-flex flex-column">
         <!-- Main Content -->
         <div id="content">
@@ -120,7 +122,9 @@
             >
               <div class="input-group">
                 <div class="input-group-append" style="font-family: 'Do Hyeon', sans-serif">
-                  <span>안녕하세요, 김프로틴 님 !</span>
+                  <span>안녕하세요,! &nbsp;</span>
+                  <span id="username4"></span>
+                  <span> !</span>
                 </div>
               </div>
             </form>
@@ -153,9 +157,8 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                    >Douglas McGee</span
-                  >
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="username">
+                  </span>
                   <img
                     class="img-profile rounded-circle"
                     src="img/undraw_profile.svg"
@@ -193,9 +196,9 @@
           <div class="container-fluid">
             <!-- Page Heading -->
             <div
-              class="d-sm-flex align-items-center justify-content-center mb-4"
-            >
-              <h1 class="h3 mb-0 text-gray-800" style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold;">나의 단백질 정보</h1>
+              class="d-sm-flex align-items-center justify-content-center mb-4">
+              <h1 class="h3 mb-0 text-gray-800" style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold;"id="username3"> </h1>
+              <h1 class="h3 mb-0 text-gray-800" style="font-family: 'Noto Sans KR', sans-serif; font-weight: bold;">의 단백질 정보</h1>
             </div>
 
             <!-- Content Row -->
@@ -213,7 +216,9 @@
                         </div>
                         <div class="h3 mb-0 font-weight-bold text-gray-800">
                           <!-- 여기에 실제 단백질 섭취량과 목표를 표시 -->
-                          50g / 70g
+                          <span id="currentProtein">50 g</span>
+                          <span id="">/</span>
+                          <span id="goalProtein">0 g</span>
                         </div>
                       </div>
                       <div class="icon-container">
@@ -439,6 +444,7 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/index.js"></script>
   </body>
 
 
