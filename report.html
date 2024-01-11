@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>SB Admin 2 - Blank</title>
+    <title>Your Protein - Report</title>
 
     <!-- Custom fonts for this template-->
     <link
@@ -26,6 +26,9 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet" />
     <link href="css/mycss.css" rel="stylesheet" />
+    <link href="css/report.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
+    <script src="https://code.jquery.com/jquery-1.8.3.min.js" integrity="sha256-YcbK69I5IXQftf/mYD8WY0/KmEDCv1asggHpJk1trM8=" crossorigin="anonymous"></script>
   </head>
 
   <body id="page-top">
@@ -39,22 +42,35 @@
         <!-- Sidebar - Brand -->
         <a
           class="sidebar-brand d-flex align-items-center justify-content-center"
+          style="flex-direction: column;"
           href="index.html"
         >
-          <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+          <div class="sidebar-brand-icon">
+            <img src="img/logo.png" alt="Your Logo">
           </div>
-          <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+          <div class="sidebar-brand-text mx-2" style="margin-top: 0.4rem;">Your Protein</div>
         </a>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0" />
 
-        <!-- Nav Item - Dashboard -->
+
         <li class="nav-item">
+          <!-- 단백질 정보 -->
           <a class="nav-link" href="index.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a
+            <span id="username2"> </span>
+            <span>의 단백질 정보</span>
+          </a>
+          <!-- 레포트 -->
+          <a class="nav-link" href="report.html">
+            <i class="fas fa-fw fa-file-alt"></i>
+            <span>레포트</span></a
+          >
+          <!-- 레시피 -->
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-utensils"></i>
+            <span>레시피</span></a
           >
         </li>
 
@@ -62,45 +78,11 @@
         <hr class="sidebar-divider" />
 
         <!-- Heading -->
-        <div class="sidebar-heading">Addons</div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item active">
-          <a
-            class="nav-link"
-            href="#"
-            data-toggle="collapse"
-            data-target="#collapsePages"
-            aria-expanded="true"
-            aria-controls="collapsePages"
-          >
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-          </a>
-          <div
-            id="collapsePages"
-            class="collapse show"
-            aria-labelledby="headingPages"
-            data-parent="#accordionSidebar"
-          >
-            <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Login Screens:</h6>
-              <a class="collapse-item" href="login.html">Login</a>
-              <a class="collapse-item" href="register.html">Register</a>
-              <a class="collapse-item" href="forgot-password.html"
-                >Forgot Password</a
-              >
-              <div class="collapse-divider"></div>
-              <h6 class="collapse-header">Other Pages:</h6>
-              <a class="collapse-item" href="404.html">404 Page</a>
-              <a class="collapse-item active" href="report.html">Blank Page</a>
-            </div>
-          </div>
-        </li>
+        <div class="sidebar-heading">회원정보</div>
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="mypage.html">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>마이페이지</span></a
           >
@@ -234,52 +216,121 @@
           </nav>
           <!-- End of Topbar -->
 
-          <!-- Begin Page Content -->
-          <div class="container-fluid">
-            <!-- Page Heading -->
-            <h1 class="h3 mb-2 text-gray-800">사용자 레포트</h1>
-            <p class="mb-4">사용자 레포트에 대한 설명</p>
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">
-                  단백질 섭취량 아래는 GPT 메시지
-                </h6>
-              </div>
-              <div class="card-body">
-                <span>GPT 메시지를 넣을 칸</span>
-                <hr />
-                Powered by
-                <code>GPT-4</code>
-              </div>
-            </div>
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">
-                  영양정보 아래는 GPT 메시지
-                </h6>
-              </div>
-              <div class="card-body">
-                <span>GPT 메시지를 넣을 칸</span>
-                <hr />
-                Powered by
-                <code>GPT-4</code>
+
+
+
+
+
+          <!-- Content Row -->
+          <div class="row justify-content-center">
+
+
+            <!-- Protein Intake Card -->
+            <div class="col-xl-8 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body" style="margin-bottom: -1rem">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div
+                        class="h3 text-s font-weight-bold text-primary text-uppercase mb-3"
+                      >
+                        당신의 프로틴 섭취
+                      </div>
+                      <div class=" mb-0 font-weight-light text-gray-800">
+                        <!-- 여기에 실제 단백질 섭취량과 목표를 표시 -->
+                        <span id="advice_1">여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.  </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">
-                  뭐 다른거 아래는 GPT 메시지
-                </h6>
-              </div>
-              <div class="card-body">
-                <span>GPT 메시지를 넣을 칸</span>
-                <hr />
-                Powered by
-                <code>GPT-4</code>
+
+
+            <!-- Protein Intake Card -->
+            <div class="col-xl-8 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body" style="margin-bottom: -1rem">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div
+                        class="h3 text-s font-weight-bold text-primary text-uppercase mb-3"
+                      >
+                        당신의 영양소 균형
+                      </div>
+                      <div class=" mb-0 font-weight-light text-gray-800">
+                        <!-- 여기에 실제 단백질 섭취량과 목표를 표시 -->
+                        <span id="advice_1">여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.  </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+
+
+            <!-- Protein Intake Card -->
+            <div class="col-xl-8 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2" style="border-left: 0.5rem solid #6285d4 !important;">
+                <div class="card-body" style="margin-bottom: -1rem">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div
+                        class="h3 text-s font-weight-bold text-primary text-uppercase mb-3"
+                      >
+                        통합 조언
+                      </div>
+                      <div class=" mb-0 font-weight-light text-gray-800">
+                        <!-- 여기에 실제 단백질 섭취량과 목표를 표시 -->
+                        <span id="advice_1">여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다. 여기에 GPT의 조언이 표시됩니다.  </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- Protein Intake Card -->
+            <div class="col-xl-8 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-70 py-2" style="border-left: 0.5rem solid rgb(91, 192, 131) !important;">
+                <div class="card-body" style="margin-bottom: -1rem">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h3 text-s font-weight-bold text-primary text-uppercase mb-3" onclick="talk_ai_open()" style="cursor: pointer;">
+                        AI에게 조언하기 <i id="talk_ai_i" class="fas fa-angle-right"></i>
+                      </div>
+
+
+                        <!-- chat start -->
+                        <div class="chat_wrap">
+                          <div class="inner">
+                             
+                          </div>
+                          <input id="mymsg" type="text" class="mymsg" placeholder="내용 입력">
+                      </div>
+                      <!-- chat end -->
+
+
+
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
           </div>
-          <!-- /.container-fluid -->
+
+
+
+
         </div>
         <!-- End of Main Content -->
 
@@ -287,7 +338,7 @@
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Your Website 2020</span>
+              <span>Copyright &copy; YourProtein 2024</span>
             </div>
           </div>
         </footer>
@@ -351,5 +402,6 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script src="js/profile.js"></script>
+    <script src="js/report.js"></script>
   </body>
 </html>
