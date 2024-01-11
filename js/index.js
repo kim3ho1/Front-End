@@ -32,7 +32,6 @@ function getRecommendRecipe() {
         .then(data => {
             const recipes = data;
             const recipeContainer = document.getElementById('recipe-container');
-
             // 각 레시피 데이터를 순회하면서 이미지와 레시피 이름을 생성합니다.
             recipes.forEach(recipe => {
                 const recipeItem = document.createElement('div');
@@ -53,9 +52,12 @@ function getRecommendRecipe() {
                 recipeContent.appendChild(h4);
 
                 const btn = document.createElement('a');
-                btn.href = `cook_recipe_${recipe.id}.html`; // 레시피 페이지 URL
                 btn.classList.add('btn', 'btn-primary');
                 btn.textContent = '요리하기';
+                btn.id = `${recipe.id}`; // 순차적으로 id 설정
+                btn.onclick=function() {
+                    cook(this); // 버튼을 클릭하면 cook 함수를 호출하도록 설정
+                };
 
                 recipeItem.appendChild(recipeContent);
                 recipeItem.appendChild(btn);
