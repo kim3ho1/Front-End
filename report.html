@@ -54,7 +54,7 @@
         <a
           class="sidebar-brand d-flex align-items-center justify-content-center"
           style="flex-direction: column"
-          href="index.html"
+          href="index"
         >
           <div class="sidebar-brand-icon">
             <img src="img/logo.png" alt="Your Logo" />
@@ -69,18 +69,18 @@
 
         <li class="nav-item">
           <!-- 단백질 정보 -->
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="index">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span id="username2">회원 님</span>
             <span>의 단백질 정보</span>
           </a>
           <!-- 레포트 -->
-          <a class="nav-link" href="report.html">
+          <a class="nav-link" href="report">
             <i class="fas fa-fw fa-file-alt"></i>
             <span>레포트</span></a
           >
           <!-- 레시피 -->
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="index">
             <i class="fas fa-fw fa-utensils"></i>
             <span>레시피</span></a
           >
@@ -94,7 +94,7 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-          <a class="nav-link" href="mypage.html">
+          <a class="nav-link" href="mypage">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>마이 페이지</span></a
           >
@@ -187,7 +187,7 @@
                   class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                   aria-labelledby="userDropdown"
                 >
-                  <a class="dropdown-item" href="mypage.html">
+                  <a class="dropdown-item" href="mypage">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     마이 페이지
                   </a>
@@ -211,29 +211,6 @@
           <!-- End of Topbar -->
           <!-- Content Row -->
           <div class="row justify-content-center">
-            <!-- Protein Intake Card -->
-            <div class="col-xl-8 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body" style="margin-bottom: -1rem">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div
-                        class="h3 text-s font-weight-bold text-primary text-uppercase mb-3"
-                      >
-                        당신의 프로틴 섭취
-                      </div>
-                      <div class="mb-0 font-weight-light text-gray-800">
-                        <!-- 여기에 실제 단백질 섭취량과 목표를 표시 -->
-                        <span id="advice_1"
-                          >
-                          <img id="1_loading" src="/img/loading.gif" alt="" style="height: 20px;">
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <!-- Protein Intake Card -->
             <div class="col-xl-8 col-md-6 mb-4">
@@ -244,12 +221,11 @@
                       <div
                         class="h3 text-s font-weight-bold text-primary text-uppercase mb-3"
                       >
-                        당신의 영양소 균형
+                        AI 계획 조언
                       </div>
                       <div class="mb-0 font-weight-light text-gray-800">
                         <!-- 여기에 실제 단백질 섭취량과 목표를 표시 -->
-                        <span id="advice_1"
-                          ><img id="2_loading" src="/img/loading.gif" alt="" style="height: 20px;">
+                        <span id="advice_1"><img id="1_loading" src="/img/loading.gif" alt="" style="height: 20px;">
                         </span>
                       </div>
                     </div>
@@ -268,14 +244,12 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div
-                        class="h3 text-s font-weight-bold text-primary text-uppercase mb-3"
-                      >
-                        통합 조언
+                        class="h3 text-s font-weight-bold text-primary text-uppercase mb-3">
+                        AI 통합 조언
                       </div>
                       <div class="mb-0 font-weight-light text-gray-800">
                         <!-- 여기에 실제 단백질 섭취량과 목표를 표시 -->
-                        <span id="advice_1"
-                          ><img id="3_loading" src="/img/loading.gif" alt="" style="height: 20px;">
+                        <span id="advice_2"><img id="2_loading" src="/img/loading.gif" alt="" style="height: 20px;">
                         </span>
                       </div>
                     </div>
@@ -298,7 +272,7 @@
                         onclick="talk_ai_open()"
                         style="cursor: pointer"
                       >
-                        AI에게 조언하기
+                        AI에게 조언 구하기
                         <i id="talk_ai_i" class="fas fa-angle-right"></i>
                       </div>
 
@@ -374,7 +348,7 @@
             >
               Cancel
             </button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="login">Logout</a>
           </div>
         </div>
       </div>
