@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Recipe Popup</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f2f2f2; /* 배경 색상 설정 (선택사항) */
+        }
+    </style>
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
+    <link href="css/mycss.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+    <!-- 여기에 팝업 내용을 추가하세요 -->
+    <h1>레시피</h1>
+        <h1 id="recipe-name">레시피 이름</h1>
+        <p id="recipe-details">레시피 상세 정보</p>
+        <p id="recipe-kcal">칼로리: </p>
+        <p id="recipe-carbo">탄수화물: </p>
+        <p id="recipe-protein">단백질: </p>
+        <p id="recipe-fat">지방: </p>
+        <p id="recipe-na">나트륨: </p>
+        <p id="recipe-kind">종류: </p>
+
+        <div id="recipe-images">
+            <!-- 이미지 표시를 위한 컨테이너 -->
+        </div>
+
+        <div id="recipe-manual">
+            <h2>조리 방법</h2>
+            <p id="recipe-manual-content">조리 방법 내용</p>
+        </div>
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <script src="js/recipepopup.js"></script>
+
+
+</body>
+</html>
