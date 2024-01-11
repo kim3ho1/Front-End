@@ -4310,7 +4310,7 @@ input[type="button"].btn-block {
 
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0rem;
 }
 
 .nav-link:hover,
@@ -10466,7 +10466,7 @@ a:focus {
 }
 
 .text-gray-800 {
-  color: #5a5c69 !important;
+  color: #3E382F !important;
 }
 
 .text-gray-900 {
@@ -10768,6 +10768,7 @@ a:focus {
 
 .sidebar .nav-item {
   position: relative;
+  padding-top: 0.5rem;
 }
 
 .sidebar .nav-item:last-child {
@@ -10891,6 +10892,7 @@ a:focus {
 }
 
 .sidebar .sidebar-brand {
+  margin: 1rem 0rem;
   height: 4.375rem;
   text-decoration: none;
   font-size: 1rem;
@@ -10904,7 +10906,21 @@ a:focus {
 
 .sidebar .sidebar-brand .sidebar-brand-icon i {
   font-size: 2rem;
+
 }
+
+
+.sidebar-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-brand-icon img {
+  width: 100%; /* 가로로 꽉 차게 설정 */
+  height: auto; /* 높이 자동 조정 */
+}
+위의 CSS
 
 .sidebar .sidebar-brand .sidebar-brand-text {
   display: none;
@@ -10977,7 +10993,7 @@ a:focus {
     display: block;
     width: 100%;
     text-align: left;
-    padding: 1rem;
+    padding: 0.7rem 1rem;
     width: 14rem;
   }
   .sidebar .nav-item .nav-link i {
