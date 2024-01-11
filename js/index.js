@@ -14,8 +14,8 @@ function updateIconProgress(currentProtein, goalProtein) {
 }
 
 
-function getRecommendRecipe() {
-    return fetch("https://api.yourprotein.shop/recipe/recommend?protein=20", {
+function getRecommendRecipe(proteinDifference) {
+    return fetch(`https://api.yourprotein.shop/recipe/recommend?protein=${proteinDifference}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -136,9 +136,13 @@ Promise.all([getCurrentProtein(), getWeeklyData()])
         // 현재 단백질 섭취량 & 목표 단백질 설정
         currentProtein = results[0].currentProtein.toFixed(1);
         goalProtein = results[0].goalProtein.toFixed(1);
+
         document.getElementById("currentProtein").innerText = currentProtein;
         document.getElementById("goalProtein").innerText = goalProtein;
         updateIconProgress(currentProtein, goalProtein);
+
+      const proteinDifference = parseInt(Math.abs(currentProtein - goalProtein));
+      getRecommendRecipe(proteinDifference);
 
         // 차트 설정
         weeklydata = results[1].slice(0, 7); // 인덱스 0부터 6까지의 데이터를 추출하여 저장
@@ -160,6 +164,5 @@ Promise.all([getCurrentProtein(), getWeeklyData()])
 $(document).ready(function() {
     // 평균 단백질 섭취량 계산 및 업데이트
     setChart();
-    getRecommendRecipe();
 });
 

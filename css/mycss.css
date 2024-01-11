@@ -180,7 +180,115 @@
 .popup {
   background-color: #fff;
   width: 60%;
-  height: 60%;
+  height: 80%;
   z-index: 1000; /* 모달을 표시할 레이어 (모달 위에 위치) */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* mycss.css */
+
+/* 레시피 팝업 전체 스타일 */
+.recipe-popup {
+  background-color: #f3f1ee;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+/* 레시피 헤더 스타일 */
+.recipe-header {
+  margin-bottom: 20px;
+}
+
+/* 레시피 이름 스타일 */
+#recipe-name {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 레시피 정보 및 영양 정보 스타일 */
+.recipe-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.recipe-info,
+.recipe-nutrition {
+  flex: 1;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.recipe-info h2,
+.recipe-nutrition h2 {
+  font-size: 24px;
+  color: #555;
+}
+
+.recipe_images {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.recipe_images h2 {
+  font-size: 24px;
+  color: #555;
+}
+
+
+/* 이미지 스타일 */
+#recipe-image {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+
+/* 조리 방법 스타일 */
+.recipe-manual {
+  margin-top: 20px;
+  text-align: left;
+  flex: 1;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.recipe-manual h2 {
+  font-size: 24px;
+  color: #555;
+}
+
+.recipe-manual-content {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #777;
+}
+
+
+
+.recipeimage img{
+  width: 30%; /* 이미지 컨테이너의 최대 너비를 100%로 설정하여 화면에 맞게 조정 */
+  height: auto; /* 이미지 컨테이너의 최대 너비를 800px로 제한 (원하는 크기로 조정) */
+  margin: 0 auto; /* 가운데 정렬을 위해 좌우 여백을 자동으로 설정 */
 }

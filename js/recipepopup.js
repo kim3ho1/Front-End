@@ -57,7 +57,15 @@ function loadRecipeDetails() {
             }
 
             // 조리 방법 표시
-            document.getElementById('recipe-manual-content').textContent = data.manual;
+            const manualContainer = document.getElementById('recipe-manual-content');
+            const manualItems = data.manual; // manual 배열
+            console.log(manualItems);
+            // manualItems 배열의 각 항목을 <p> 태그로 감싸서 연결
+            const manualText = manualItems.map(item => `<p>${item}</p>`).join('');
+
+            manualContainer.innerHTML = manualText; // innerHTML을 사용하여 HTML 태그를 해석하도록 설정
+
+
         })
         .catch(error => {
             console.error('오류:', error);
