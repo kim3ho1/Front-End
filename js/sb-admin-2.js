@@ -55,28 +55,5 @@
 
 })(jQuery);// End of use strict
 
-// Document ready function
-$(document).ready(function() {
-  // Update icon progress
-  function updateIconProgress(percentage) {
-    var progressIcon = document.getElementById('progressIcon');
-    var iconHeight = progressIcon.offsetHeight; // 아이콘의 전체 높이
-    var clipHeight = iconHeight * (1 - (percentage / 100)); // 클리핑 높이 계산
-
-    // 클리핑 영역 업데이트
-    progressIcon.style.clip = `rect(${clipHeight}px, auto, auto, 0)`;
-  }
-
-  // 평균 단백질 섭취량 계산 및 업데이트
-  function updateAverageProteinIntake() {
-    var data = [40, 80, 95, 35, 55, 72, 48]; // 더미 데이터
-    var sum = data.reduce(function(a, b) { return a + b; }, 0);
-    var average = sum / data.length;
-    $('#averageProteinIntake').text(average.toFixed(1) + 'g');
-  }
-
-  updateIconProgress(70); // 아이콘 프로그레스 업데이트
-  updateAverageProteinIntake(); // 평균 단백질 섭취량 업데이트
-});
 
 // End of file

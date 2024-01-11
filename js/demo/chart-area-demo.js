@@ -4,7 +4,7 @@ function setChart(){
   Chart.defaults.global.defaultFontColor = '#858796';
 
   function getColorForDataPoint(dataPoint) {
-    return dataPoint < goalProtein ? '#ec8282' : 'rgb(215,204,192)'; // 70 초과시 빨간색, 아니면 기본 색상
+    return Math.abs(dataPoint - goalProtein) > 20 ? '#ec8282' : 'rgb(215,204,192)';
   }
 // 색상 배열 생성
   var backgroundColors = weeklyamount.map(getColorForDataPoint);

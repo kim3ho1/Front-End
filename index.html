@@ -212,7 +212,7 @@
                     <div class="row no-gutters align-items-center">
                       <div class="col mr-2">
                         <div
-                          class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                          class="text-xs font-weight-bold text-primary mb-1"
                         >
                           현재 단백질 섭취량 / 목표 단백질
                         </div>
@@ -262,13 +262,17 @@
                   <!-- Card Body -->
                   <div class="card-body">
                     <!-- 중앙 정렬 및 스타일링을 위한 클래스 추가 -->
-                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
+                    <div class="text-xs font-weight-bold text-primary mb-1 text-center">
                       주간 평균 단백질 섭취량 (g) :
                       <span id="averageProteinIntake">Xg</span>
                     </div>
                     <div class="chart-area">
                       <canvas id="myAreaChart"></canvas>
                     </div>
+                  </div>
+
+                  <div class="text-xs text-primary mb-1 text-right">
+                    * 목표 단백질보다 섭취량이 20g 많거나 적을 경우 빨간색으로 표시됩니다.  &nbsp;
                   </div>
                 </div>
               </div>
@@ -279,7 +283,7 @@
               <div class="col-lg-3 mb-4">
                 <a href="report.html" id="diagnoseButton" class="btn card bg-warning text-white shadow">
                   <div class="card-body">
-                    <div class="text-xs font-weight-bold text-uppercase">
+                    <div class="text-xs font-weight-bold" style="font-size: medium">
                       진단하기
                   </div>
                   </div>
@@ -296,52 +300,8 @@
                   <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">레시피</h6>
                   </div>
-                  <div class="card-body">
-                    <!-- 첫 번째 레시피 -->
-                    <div class="recipe-item">
-                      <div class="recipe-content">
-                        <img src="recipe1.jpg" alt="Recipe 1">
-                        <h4 class="recipe-name">레시피 1</h4>
-                      </div>
-                      <a href="cook_recipe_1.html" class="btn btn-primary">요리하기</a>
-                    </div>
 
-                    <!-- Divider -->
-                    <hr class="sidebar-divider" />
-
-                    <!-- 두 번째 레시피 -->
-                    <div class="recipe-item">
-                      <div class="recipe-content">
-                        <img src="recipe2.jpg" alt="Recipe 2">
-                        <h4 class="recipe-name">레시피 2</h4>
-                      </div>
-                      <a href="cook_recipe_2.html" class="btn btn-primary">요리하기</a>
-                    </div>
-
-                    <!-- Divider -->
-                    <hr class="sidebar-divider" />
-
-                    <!-- 세 번째 레시피 -->
-                    <div class="recipe-item">
-                      <div class="recipe-content">
-                        <img src="recipe3.jpg" alt="Recipe 3">
-                        <h4 class="recipe-name">레시피 3</h4>
-                      </div>
-                      <a href="cook_recipe_3.html" class="btn btn-primary">요리하기</a>
-                    </div>
-
-                    <!-- Divider -->
-                    <hr class="sidebar-divider" />
-
-                    <!-- 네 번째 레시피 -->
-                    <div class="recipe-item">
-                      <div class="recipe-content">
-                        <img src="recipe4.jpg" alt="Recipe 4">
-                        <h4 class="recipe-name">레시피 4</h4>
-                      </div>
-                      <a href="cook_recipe_4.html" class="btn btn-primary">요리하기</a>
-                    </div>
-                    <!-- 필요한 만큼 레시피 아이템을 추가할 수 있습니다. -->
+                  <div class="card-body" id="recipe-container">
                   </div>
                 </div>
               </div>

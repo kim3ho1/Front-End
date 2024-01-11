@@ -133,6 +133,7 @@
 
 .recipe-name {
   font-size: 1.1rem;
+  color: #3E382F;
   margin: 0; /* 기본 마진 제거 */
 }
 

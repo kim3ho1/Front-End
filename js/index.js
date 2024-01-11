@@ -13,16 +13,22 @@ function updateIconProgress(currentProtein, goalProtein) {
     progressIcon.style.clip = `rect(${clipHeight}px, auto, auto, 0)`;
 }
 
-function setGender(userGender) {
-    if (userGender === "male") {
+function setGender(Gender) {
+    const profileImage = document.getElementById('profileImage');
+
+    let imagePath = "";
+
+    if (Gender === "MALE") {
         imagePath = "img/undraw_profile_2.svg";
-    } else if (userGender === "female") {
+    } else if (Gender === "FEMALE") {
         imagePath = "img/undraw_profile_3.svg";
     } else {
         // 성별 정보가 없는 경우 기본 이미지 경로 설정
         imagePath = "img/undraw_profile.svg";
     }
-    return imagePath
+
+    // 프로필 이미지의 src 속성을 변경합니다.
+    profileImage.src = imagePath;
 }
 
 function getUser(){
@@ -44,6 +50,7 @@ function getUser(){
         .then(data => {
             var username = data.name;
             var gender = data.gender;
+            console.log(gender);
             setGender(gender);
             document.getElementById("username").innerText = username + " 님";
             document.getElementById("username2").innerText = username + " 님";
@@ -55,6 +62,68 @@ function getUser(){
             console.error('오류:', error);
         });
 }
+
+
+function getRecommendRecipe() {
+    return fetch("https://api.yourprotein.shop/recipe/recommend?protein=20", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization" : "Bearer " + getCookie("accessToken")
+        },
+    })
+        .then(response => {
+            // 응답이 성공적으로 받아지면 JSON 형식으로 파싱합니다.
+            if (!response.ok) {
+                // window.location.replace(SERVER_DOMAIN+ "/login.html")
+            }
+            return response.json();
+        })
+        .then(data => {
+            const recipes = data;
+            const recipeContainer = document.getElementById('recipe-container');
+
+            // 각 레시피 데이터를 순회하면서 이미지와 레시피 이름을 생성합니다.
+            recipes.forEach(recipe => {
+                const recipeItem = document.createElement('div');
+                recipeItem.classList.add('recipe-item');
+
+                const recipeContent = document.createElement('div');
+                recipeContent.classList.add('recipe-content');
+
+                const img = document.createElement('img');
+                img.src = recipe.images[0]; // 첫 번째 이미지만 사용
+                img.alt = recipe.recipeName;
+
+                const h4 = document.createElement('h4');
+                h4.classList.add('recipe-name');
+                h4.textContent = recipe.recipeName;
+
+                recipeContent.appendChild(img);
+                recipeContent.appendChild(h4);
+
+                const btn = document.createElement('a');
+                btn.href = `cook_recipe_${recipe.id}.html`; // 레시피 페이지 URL
+                btn.classList.add('btn', 'btn-primary');
+                btn.textContent = '요리하기';
+
+                recipeItem.appendChild(recipeContent);
+                recipeItem.appendChild(btn);
+                recipeContainer.appendChild(recipeItem);
+
+                const divider = document.createElement('hr');
+                divider.classList.add('sidebar-divider');
+                recipeContainer.appendChild(divider);
+            });
+
+        })
+        .catch(error => {
+            // 오류가 발생하면 콘솔에 출력합니다.
+            console.error('오류:', error);
+            // window.location.replace(SERVER_DOMAIN+ "/login.html")
+        });
+}
+
 
 function getCurrentProtein(){
     return fetch("https://api.yourprotein.shop/food", {
@@ -72,7 +141,7 @@ function getCurrentProtein(){
             }
             return response.json();
         })
-        .catch(error => {
+                .catch(error => {
             // 오류가 발생하면 콘솔에 출력합니다.
             console.error('오류:', error);
             // window.location.replace(SERVER_DOMAIN+ "/login.html")
@@ -109,16 +178,6 @@ function updateAverageProteinIntake() {
     $('#averageProteinIntake').text(average.toFixed(1) + 'g');
 }
 
-
-
-// Document ready function
-$(document).ready(function() {
-    // 평균 단백질 섭취량 계산 및 업데이트
-    getUser();
-    setChart();
-});
-
-
 Promise.all([getCurrentProtein(), getWeeklyData()])
     .then(results => {
 
@@ -142,3 +201,16 @@ Promise.all([getCurrentProtein(), getWeeklyData()])
     .catch(error => {
         console.error('오류:', error);
     });
+
+
+
+
+
+
+// Document ready function
+$(document).ready(function() {
+    // 평균 단백질 섭취량 계산 및 업데이트
+    getUser();
+    setChart();
+    getRecommendRecipe();
+});
