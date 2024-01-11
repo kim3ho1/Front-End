@@ -25,4 +25,4 @@ jobs:
         timeout: 60s
         script: |
           cd /home/ec2-user/Front-End
-          sudo git pull origin main
+          sudo git pull origin deploy
