@@ -45,7 +45,7 @@ $(function(){
                 "prompt": _val
               };
 
-            fetch("http://api.yourprotein.shop/api/chatgpt/rest/completion/chat", {
+            fetch("https://api.yourprotein.shop/api/chatgpt/rest/completion/chat", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
